@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nord Kirkegården Brabrand</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<header>
+    <h1>Velkommen til</h1>
+    <h2>Nord Kirkegården i Brabrand</h2>
+</header>
+
+<!-- FANER -->
+<div class="tabs">
+    <button onclick="openTab('forside')">Forside</button>
+    <button onclick="openTab('spil')">Udforsk kirkegården</button>
+</div>
+
+<!-- FORSIDE -->
+<div id="forside" class="tab-content">
+    <section class="intro">
+        <p>Dette er en fredfyldt kirkegård i Brabrand, hvor natur og ro går hånd i hånd.</p>
+    </section>
+</div>
+
+<!-- UDFORSK -->
+<div id="spil" class="tab-content" style="display:none;">
+    <h2>Udforsk kirkegården</h2>
+
+    <div class="sub-tabs">
+        <button onclick="openSubTab('dyr')">Dyr og Planter</button>
+        <button onclick="openSubTab('arrangementer')">Arrangementer</button>
+        <button onclick="openSubTab('kort')">Kort</button>
+    </div>
+
+    <!-- DYR -->
+    <div id="dyr" class="sub-content">
+        <h3>Dyr</h3>
+
+        <div class="animal-block">
+            <img src="pindsvin.jpg" alt="Pindsvin">
+            <p>På Nordre Kirkegård lever der forskellige dyr; man kan blandt andet møde et pindsvin.</p>
+        </div>
+
+        <div class="fact-box">
+            <h4>Vidste du?</h4>
+            <p>Pindsvin bor i nogle af buskene her på Nord Kirkegården.</p>
+            <img src="busk.jpg" alt="Busk">
+        </div>
+
+        <div class="animal-block">
+            <img src="fulge.jpg" alt="Fugle">
+            <p>Der findes mange fugle på kirkegården, som synger og bygger reder.</p>
+        </div>
+
+        <div class="fact-box">
+            <h4>Vidste du?</h4>
+            <p>Nogle fugle bygger deres reder i træerne på kirkegården.</p>
+            <img src="træer.jpg" alt="Træer">
+        </div>
+
+        <div class="animal-block">
+            <img src="insekter.jpg" alt="Insekter">
+            <p>Insekter som bier og sommerfugle hjælper med at bestøve planter.</p>
+        </div>
+
+        <div class="fact-box">
+            <h4>Vidste du?</h4>
+            <p>Bier er meget vigtige for naturen, fordi de bestøver blomster.</p>
+            <img src="blomster.jpg" alt="Blomster">
+        </div>
+    </div>
+
+    <!-- ARRANGEMENTER -->
+    <div id="arrangementer" class="sub-content" style="display:none;">
+        <h3>Arrangementer</h3>
+        <p>Her kan du skrive om arrangementer.</p>
+    </div>
+
+    <!-- KORT (OPDATERET) -->
+    <div id="kort" class="sub-content" style="display:none;">
+        <h3>Kort</h3>
+
+        <p>
+            Her kan du se et kort over Nord Kirkegården i Brabrand. Kortet gør det nemmere
+            for besøgende at finde rundt mellem stier, gravsteder og forskellige områder.
+        </p>
+
+        <p>
+            Uanset om du er på besøg for at finde et bestemt sted, gå en tur eller blot
+            udforske området, kan kortet hjælpe dig med at få et overblik og finde vej.
+        </p>
+
+        <img src="Kort.png" alt="Kort over Nord Kirkegården">
+    </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function openTab(tabId) {
+    let tabs = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+    document.getElementById(tabId).style.display = "block";
+}
+
+function openSubTab(tabId) {
+    let tabs = document.getElementsByClassName("sub-content");
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+    document.getElementById(tabId).style.display = "block";
+}
+</script>
+
+</body>
+</html>
