@@ -1,137 +1,234 @@
-/* HEADER */
-header {
-    background-color: #2e4d3a;
-    color: white;
-    padding: 60px 20px;
+/* ===== GENERELT ===== */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f7f5;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
+/* ===== HEADER ===== */
+header{
+    background:#2e4d3a;
+    color:white;
+    padding:20px;
+    text-align:center;
+    position:relative;
 }
 
-header h2 {
-    margin: 10px 0 0;
-    font-size: 36px;
+.logo{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    width:120px;
 }
 
-.intro {
-    padding: 40px;
-    font-size: 18px;
+/* ===== FANER ===== */
+.tabs{
+    background:#1f2f27;
+    text-align:center;
+    padding:10px;
 }
 
-/* FANER */
-.tabs {
-    background-color: #333;
-    padding: 10px;
+.tabs button{
+    padding:10px 20px;
+    margin:5px;
+    background:none;
+    color:white;
+    border-radius:20px;
+    border:none;
+    cursor:pointer;
 }
 
-.tabs button {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
+.tabs button.active{
+    background:#2e7d32;
 }
 
-.tabs button:hover {
-    background-color: #777;
+/* ===== UNDER FANER ===== */
+.sub-tabs{
+    text-align:center;
+    margin-top:20px;
 }
 
-/* INDHOLD */
-.tab-content {
-    padding: 20px;
+.sub-tabs button{
+    padding:10px 15px;
+    margin:5px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
 }
 
-/* UNDERFANER */
-.sub-tabs {
-    margin-top: 20px;
+/* ===== FORSIDE ===== */
+.intro{
+    background:url("kirkegård indgang.jpg") center/cover;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.sub-tabs button {
-    background-color: #2e4d3a;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
+.hero-box{
+    background:rgba(0,0,0,0.6);
+    color:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    max-width:600px;
 }
 
-.sub-tabs button:hover {
-    background-color: #3f6b52;
+/* ===== KNAPPER ===== */
+button{
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    background:#2e7d32;
+    color:white;
+    cursor:pointer;
+    margin:5px;
 }
 
-/* SEKTIONER */
-.sub-content {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
+/* ===== INDHOLD ===== */
+.tab-content{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
 }
 
-/* DYRE BLOK */
-.animal-block {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: left;
+.sub-content{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-top:20px;
 }
 
-.animal-block img {
-    width: 200px;
-    border-radius: 10px;
+/* ===== FAKTA BOX ===== */
+.fact-box{
+    background:#e8f3ec;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
 }
 
-/* VIDSTE DU BOKS */
-.fact-box {
-    background-color: #e8f3ec;
-    border-left: 6px solid #2e4d3a;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 8px;
-    max-width: 500px;
-    text-align: left;
+/* ===== ARRANGEMENTER BILLEDER ===== */
+#arrangementer img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-top:10px;
 }
 
-.fact-box h4 {
-    margin-top: 0;
-    color: #2e4d3a;
+/* ===== SLIDER (SAMME LOOK SOM BOKSE) ===== */
+.slider{
+    position:relative;
+    height:300px;              /* samme som billeder */
+    overflow:hidden;
+    border-radius:10px;
+    margin-top:10px;
+
+    background:#e8f3ec;        /* samme som fact-box */
+    padding:10px;
 }
 
-.fact-box img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
+/* BILLEDER I SLIDER */
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    opacity:0;
+    transition:0.5s;
 }
 
-/* MOBIL */
-@media (max-width: 600px) {
-    .animal-block {
-        flex-direction: column;
-        text-align: center;
+.slide.active{
+    opacity:1;
+}
+
+/* ===== KORT ===== */
+.kort-billede{
+    width:100%;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+/* ===== RUTER ===== */
+.rute-container{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.rute-box{
+    flex:1;
+    background:#e8f3ec;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.rute-box img{
+    width:100%;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+/* ===== QUIZ ===== */
+.sub-content button{
+    display:block;
+    width:100%;
+}
+
+.quiz-img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+/* ===== ARRANGEMENTER EKSTRA ===== */
+#arrangementer .fact-box{
+    margin-bottom:20px;
+}
+
+/* ===== MOBIL ===== */
+@media(max-width:600px){
+
+    .slider{
+        height:180px;
     }
 
-    .animal-block img {
-        width: 80%;
+    #arrangementer img{
+        height:180px;
     }
-}
-/* KORT BOKS */
-.info-box {
-    background-color: #e8f3ec; /* samme som fact-box */
-    border-left: 6px solid #2e4d3a;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 8px;
-    max-width: 500px;
-    text-align: left;
-}
 
-.info-box h4 {
-    margin-top: 0;
-    color: #2e4d3a;
+    .rute-container{
+        flex-direction:column;
+    }
+
+    .rute-box img{
+        height:120px;
+        object-fit:cover;
+    }
+
+    .tabs button,
+    .sub-tabs button{
+        width:100%;
+        display:block;
+    }
+
+    .logo{
+        width:80px;
+        left:10px;
+    }
+
+    .intro{
+        height:70vh;
+    }
+
+    .quiz-img{
+        height:140px;
+    }
 }
