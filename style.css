@@ -20,6 +20,7 @@ header{
     top:50%;
     transform:translateY(-50%);
     width:120px;
+    height:auto;
 }
 
 /* ===== FANER ===== */
@@ -113,25 +114,23 @@ button{
 /* ===== ARRANGEMENTER BILLEDER ===== */
 #arrangementer img{
     width:100%;
-    height:300px;
+    aspect-ratio:16/9;
     object-fit:cover;
     border-radius:10px;
     margin-top:10px;
+    max-height:700px;
 }
 
-/* ===== SLIDER (SAMME LOOK SOM BOKSE) ===== */
+/* ===== SLIDER ===== */
 .slider{
     position:relative;
-    height:300px;              /* samme som billeder */
+    height:700px;
     overflow:hidden;
     border-radius:10px;
     margin-top:10px;
-
-    background:#e8f3ec;        /* samme som fact-box */
-    padding:10px;
+    background:#e8f3ec;
 }
 
-/* BILLEDER I SLIDER */
 .slide{
     position:absolute;
     width:100%;
@@ -151,6 +150,7 @@ button{
     width:100%;
     border-radius:12px;
     margin:15px 0;
+    height:auto;
 }
 
 /* ===== RUTER ===== */
@@ -170,8 +170,11 @@ button{
 
 .rute-box img{
     width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
     border-radius:10px;
     margin-top:10px;
+    max-height:400px;
 }
 
 /* ===== QUIZ ===== */
@@ -180,12 +183,14 @@ button{
     width:100%;
 }
 
+/* ===== QUIZ BILLEDER ===== */
 .quiz-img{
     width:100%;
-    height:180px;
+    aspect-ratio:16/9;
     object-fit:cover;
     border-radius:10px;
     margin:10px 0;
+    max-height:900px;
 }
 
 /* ===== ARRANGEMENTER EKSTRA ===== */
@@ -193,24 +198,32 @@ button{
     margin-bottom:20px;
 }
 
+/* ===== FJERN BEVÆGELSE (FIX) ===== */
+img{
+    display:block;
+}
+
 /* ===== MOBIL ===== */
 @media(max-width:600px){
 
     .slider{
-        height:180px;
+        height:220px;
+    }
+
+    .quiz-img{
+        max-height:200px;
     }
 
     #arrangementer img{
-        height:180px;
+        max-height:200px;
+    }
+
+    .rute-box img{
+        max-height:160px;
     }
 
     .rute-container{
         flex-direction:column;
-    }
-
-    .rute-box img{
-        height:120px;
-        object-fit:cover;
     }
 
     .tabs button,
@@ -226,9 +239,5 @@ button{
 
     .intro{
         height:70vh;
-    }
-
-    .quiz-img{
-        height:140px;
     }
 }
